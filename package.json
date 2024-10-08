@@ -1,25 +1,50 @@
 {
   "name": "radyushin-test-assignment",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "packageManager": "pnpm@9.12.1+sha512.e5a7e52a4183a02d5931057f7a0dbff9d5e9ce3161e33fa68ae392125b79282a8a8a470a51dfc8a0ed86221442eb2fb57019b0990ed24fab519bf0e1bc5ccfc4",
   "scripts": {
-    "dev": "next dev --turbo",
+    "preinstall": "npx only-allow pnpm",
+    "dev": "concurrently -n Next.js,TypeScript \"next dev\" \"tsc --watch --project tsconfig.json\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "19.0.0-rc-2d16326d-20240930",
-    "react-dom": "19.0.0-rc-2d16326d-20240930",
-    "next": "15.0.0-canary.179"
+    "next": "15.0.0-canary.179",
+    "react": "19.0.0-rc-1460d67c-20241003",
+    "react-dom": "19.0.0-rc-1460d67c-20241003"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "15.0.0-canary.179"
+    "@antfu/eslint-config": "~3.7.3",
+    "@eslint-react/eslint-plugin": "^1.14.3",
+    "@next/eslint-plugin-next": "15.0.0-canary.179",
+    "@total-typescript/ts-reset": "^0.6.1",
+    "@types/eslint-plugin-jsx-a11y": "^6.9.0",
+    "@types/eslint__eslintrc": "^2.1.2",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.7.5",
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc",
+    "@vanilla-extract/next-plugin": "^2.4.6",
+    "concurrently": "^9.0.1",
+    "eslint": "^9.12.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react-hooks": "5.1.0-rc-ed966dac-20241007",
+    "eslint-plugin-react-refresh": "^0.4.12",
+    "globals": "^15.10.0",
+    "prettier": "^3.3.3",
+    "types-spring": "^2.2.2",
+    "typescript": "^5.6.2"
   },
-  "packageManager": "pnpm@9.12.1+sha512.e5a7e52a4183a02d5931057f7a0dbff9d5e9ce3161e33fa68ae392125b79282a8a8a470a51dfc8a0ed86221442eb2fb57019b0990ed24fab519bf0e1bc5ccfc4"
+  "overrides": {
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc"
+  },
+  "browserslist": [
+    "last 4 versions"
+  ]
 }
