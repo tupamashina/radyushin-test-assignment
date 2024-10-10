@@ -1,17 +1,48 @@
 {
+  "exclude": ["node_modules"],
+
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "eslint.config.js",
+    "rsbuild.config.ts"
+  ],
+
   "compilerOptions": {
-    "target": "ES2020",
-    "lib": ["DOM", "ES2020"],
-    "module": "ESNext",
-    "jsx": "react-jsx",
-    "noEmit": true,
+    // Type checking
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
     "strict": true,
-    "skipLibCheck": true,
-    "isolatedModules": true,
+
+    // Modules
+    "allowImportingTsExtensions": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "paths": { "~/*": ["./src/*"] },
     "resolveJsonModule": true,
-    "moduleResolution": "bundler",
+
+    // Emit
+    "noEmit": true,
+
+    // JavaScript Support
+    "allowJs": true,
+
+    // Interop constraints
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+
+    // Language and environment
+    "jsx": "react-jsx",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "target": "ESNext",
     "useDefineForClassFields": true,
-    "allowImportingTsExtensions": true
-  },
-  "include": ["src"]
+
+    // Completeness
+    "skipLibCheck": true
+  }
 }
