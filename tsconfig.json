@@ -1,57 +1,17 @@
 {
-  "exclude": ["node_modules"],
-
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "next-env.d.ts",
-    ".next/types/**/*.ts",
-    "eslint.config.js"
-  ],
-
   "compilerOptions": {
-    // Type checking
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noUncheckedIndexedAccess": true,
-    "strict": true,
-
-    // Modules
+    "target": "ES2020",
+    "lib": ["DOM", "ES2020"],
     "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "paths": { "~/*": ["./src/*"] },
-    "resolveJsonModule": true,
-
-    // Emit
+    "jsx": "react-jsx",
     "noEmit": true,
-
-    // JavaScript Support
-    "allowJs": true,
-
-    // Editor support
-    "plugins": [{ "name": "next" }],
-
-    // Interop constraints
-    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
     "isolatedModules": true,
-    "verbatimModuleSyntax": true,
-
-    // Language and environment
-    "jsx": "preserve",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "target": "ESNext",
-
-    // Projects
-    "incremental": true,
-
-    // Output Formatting
-    "preserveWatchOutput": true,
-    "pretty": true,
-
-    // Completeness
-    "skipLibCheck": true
-  }
+    "resolveJsonModule": true,
+    "moduleResolution": "bundler",
+    "useDefineForClassFields": true,
+    "allowImportingTsExtensions": true
+  },
+  "include": ["src"]
 }
